@@ -165,8 +165,8 @@ a {
 }
 
 a:hover {
-  color: #224abe;
-  text-decoration: underline;
+  /*color: #224abe;
+  text-decoration: underline;*/
 }
 
 a:not([href]):not([tabindex]) {
@@ -554,7 +554,7 @@ pre code {
 .container {
   width: 100%;
   padding-right: 0.75rem;
-  background-image: url("../img/background.jpg");
+  /*background-image: url("../img/background.jpg");*/
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
@@ -4344,7 +4344,7 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 0.9rem;
 }
 
 .card-title {

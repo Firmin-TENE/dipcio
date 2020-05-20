@@ -5,6 +5,16 @@ body{
 	padding-left: 0;
 	padding-right: 0;
 }
+
+.current_module {
+	font-weight: bold; 
+	font-size: x-large; 
+	text-align: center; 
+	font-family: Constantia;
+	border: 2px solid #858796; 
+	border-radius: 10px; 
+}
+
 .title{
 	font-family: Constantia;
 	font-size: 20px;
@@ -14,6 +24,14 @@ body{
 .word-wrap
 {
 	word-wrap: break-word;
+}
+
+.accueil{
+	width: 65%;	
+}
+.accueil .card-text:hover{
+	font-weight: bold;
+	font-size: x-large;
 }
 
 #modules{
@@ -33,7 +51,7 @@ body{
 
 #modules img{
 	width: 100%;
-	height: 130px;
+	height: 100px;
 	border-radius: 20px;
 }
 
@@ -47,10 +65,17 @@ body{
 .card .card-text{
 	text-align: center;
 	font-family: "Britannic Bold";
+	font-size: large;
+	color: blue;
+	font-weight: bold;
+}
+
+.card .card-text:hover{
+	color: black;
 }
 
 .module{
-	border: 1px solid black;
+	border: 1px solid blue;
 	border-radius: 20px;
 }
 
@@ -60,9 +85,67 @@ body{
 }
 
 a .card{
+	border: 2px solid blue;
 	border-radius: 20px;
 }
+
+a .card:hover{
+	border: 4px solid black;
+}
+
 .bg-blue{
+	/*background-color: #563d7c;*/
 	background-color: #212529;
-	background-color: #563d7c;
+	/*#64b5f6*/
+}
+
+.text-white{
+	color: #fff;
+}
+.pseudo{
+	color: #cbbde2; 
+	font-size: 16px;"
+}
+
+.pseudo:hover{
+	text-decoration: underline;
+}
+
+#footer{
+	background-color: black; 
+	color: #fff; 
+	text-align: center; 
+	height: 65px; 
+	padding-top: 12px; 
+	font-weight: bold;"
+}
+
+.details-modules .col-md-3{
+	border: 2px solid #858796;
+	height: 23em;
+	border-radius: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.details-modules .col-md-6{
+	border: 2px solid white;
+	height: 23em;
+	margin-left: 40px;
+}
+
+.video-icone{
+	width: 45%; 
+	height: 20%; 
+	margin-left: 27%;
+	border-radius: 10px;
+	margin-top: 15px;
+}
+
+.video-title{
+	margin-bottom: 15px;
+	text-align: center; 
+	font-size: large; 
+	font-family: Constantia;
+	color: #fff;
 }
