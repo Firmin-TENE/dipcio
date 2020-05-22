@@ -115,37 +115,43 @@ a .card:hover{
 	background-color: black; 
 	color: #fff; 
 	text-align: center; 
-	height: 65px; 
+	height: 50px; 
 	padding-top: 12px; 
 	font-weight: bold;"
 }
 
 .details-modules .col-md-3{
-	border: 2px solid #858796;
+	/*border: 2px solid #858796;*/
 	height: 23em;
 	border-radius: 30px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 3px;
+	margin-top: 5px;
+	margin-right: 0.2em;
 }
 
 .details-modules .col-md-6{
 	border: 2px solid white;
 	height: 23em;
-	margin-left: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: 1em;
+	background-color: #000; 
 }
 
 .video-icone{
-	width: 45%; 
-	height: 20%; 
-	margin-left: 27%;
+	width: 30%; 
+	height: 8%; 
+	margin-left: 35%;
 	border-radius: 10px;
 	margin-top: 15px;
 }
 
 .video-title{
 	margin-bottom: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
 	text-align: center; 
-	font-size: large; 
+	font-size: 1.1em; 
 	font-family: Constantia;
 	color: #fff;
 }
