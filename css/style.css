@@ -13,13 +13,16 @@ body{
 	font-family: Constantia;
 	border: 2px solid #858796; 
 	border-radius: 10px; 
+	/*color: #f3e5f5;*/
+	color: #ffab40;
 }
 
 .title{
 	font-family: Constantia;
 	font-size: 20px;
 	padding-left: 15px;
-	color: #eee;
+	/*color: #eee;*/
+	color: #c51162;
 }
 .word-wrap
 {
@@ -36,7 +39,8 @@ body{
 
 #modules{
 	padding: 2em; 
-	margin-bottom: 3em;
+	margin-bottom: 1.4em;
+	margin-top: 1em;
 	/*background-image: url("../img/background1.jpg");*/
 }
 
@@ -133,8 +137,17 @@ a .card:hover{
 	border: 2px solid white;
 	height: 23em;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 	margin-left: 1em;
+	background-color: #000; 
+}
+
+.details-modules .col-md-7{
+	border: 2px solid white;
+	height: 25em;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	margin-left: 4em;
 	background-color: #000; 
 }
 
@@ -154,4 +167,41 @@ a .card:hover{
 	font-size: 1.1em; 
 	font-family: Constantia;
 	color: #fff;
+}
+
+.part{
+	height: 5em; 
+	margin-left: 10px; 
+	margin-top: 15px;
+	margin-right: 10px; 
+	text-align: center;
+	/*border: 1px solid black; */
+	margin-bottom: 10px;"
+}
+
+.part span {
+	margin-top: -18px; 
+	font-weight: bold; 
+	color: #fff; 
+	font-family: Sarabun; 
+	font-size: large;"
+}
+
+.part:hover{
+	/*border: 1px solid #bf360c;*/
+	font-size: large;
+	text-decoration: underline;
+	text-decoration-color: #fff;
+	border: 2px solid black;
+}
+.help:hover{
+	text-decoration: underline;
+}
+
+.masquer{
+	display: none;
+}
+
+.demasquer{
+	display: block;
 }
