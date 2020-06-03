@@ -13,6 +13,7 @@
 
   <title>VIDEOS</title>
 
+  <!-- Custom fonts for this template-->
   <?php
     include('link.php');
   ?>
@@ -53,74 +54,70 @@
                 <div class="row" style="height: 30px;"></div>
                 <div class="row" style="margin-bottom: 20px;">
                    <div class="col-md-12 current_module"> 
-                    <span>VIDEOS</span>
+                    <span>MODULE LEÇONS</span>
                   </div>
                 </div>
               </div>
               <div class="col-md-1" style="padding: 0px;">
                <?php
                   include('back.php');
-               ?>                
+               ?>           
               </div>  
             </div>
             <!-- Fin L'entête contenant le retour à l'accueil et le titre du module -->
 
             <!-- contenu du module -->
-            <div class="row details-modules" style="margin-bottom: 10px;">
+            <div class="row details-modules1" style="margin-bottom: 30px; margin-top: 15px;">
               <!-- liste des vidéos -->
-              <div class="col-md-3" style="height: 23.5em; overflow-y: auto;">
+              <div class="col-md-2">
                 
-                <?php
-                  $liste_videos = liste_videos();
-                  $n = count($liste_videos);
-
-                  for($i=0;$i<$n;$i++){
-                    $titre =utf8_encode($liste_videos[$i]->_titre);
-                    echo "
-                      <a href='#' onclick='choix_video(".$liste_videos[$i]->_id_video.");' id='lien".$liste_videos[$i]->_id_video."'>  
-                        <div class=''>
-                          <img src='img/video_det1.png' class='video-icone' alt='vidéos UE1'>
-                          <div class='card-body card-module'>
-                            <h3 class='video-title'>".$titre."</h3>
-                          </div>
-                        </div>                      
-                      </a>";         
-
-                  }
-                ?>
-                  
-
               </div>
               <!-- fin liste des vidéos -->
 
               <!-- espace lecteur -->
-              <div class="col-md-6" id="vid_vide" style="padding: 0px;">
-                
-                <video width="100%" height="100%" controls>
-                  <source type="video/mp4">
-                  Votre navigateur ne supporte pas la lecture des vidéos
-                </video>
+              <div class="col-md-8" style="padding: 10px; border-radius: 20px; border: 2px solid #858796; height: 24em;">
+
+                <div class="row" style="margin: 5px; font-size: large;">
+                  <div class="col-md-12">
+                    <span class="location_title">TITRE DU MODULE:  </span> <span class="location">MISE EN ŒUVRE ET OPTIMISATION DE L’ORDINATEUR</span>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 5px; font-size: large;">
+                  <div class="col-md-12">
+                    <span class="location_title">Famille de Situation:</span> <span class="location"> Optimisation de l'ordinateur</span>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 5px; font-size: large;">
+                  <div class="col-md-12">
+                    <span class="location_title">Exemple de Situation:</span> <span class="location"> Montage d'un ordinateur et maintenance de élémentaire</span>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 5px; font-size: large;">
+                  <div class="col-md-12">
+                    <span class="location_title">Catégorie de Situation:</span><span class="location">Proposer des composants pour obtenir un ordinateur avec des performances spécifiques</span>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 5px; margin-top: 10px; margin-left: 40px; margin-right: 40px;">
+                  <div class="col-md-12">
+                   <a class="btn-primary btn" style="font-family: Constantia; color: white; font-weight: bold; background-color: #ff00ff;" href="lecon1.php?l=1">
+                     UE1: IDENTIFICATION DES PORTS D'UN ORDINATEUR AINSI QUE LEURS RÔLES
+                   </a>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 5px; margin-top: 10px; margin-left: 40px; margin-right: 40px;">
+                  <div class="col-md-12">
+                   <a class="btn-primary btn" style="font-family: Constantia; color:white; font-weight: bold; background-color: #ff00ff;" href="#">
+                     UE1:   IDENTIFICATION DES COMPOSANTS INTERNES D'UN ORDINATEUR AINSI QUE LEURS RÔLES
+                    </a>
+                  </div>
+                </div>
 
               </div>
-
-                <?php
-                  $liste_videos = liste_videos();
-                  $n = count($liste_videos);
-
-                  for($i=0;$i<$n;$i++){
-                    echo "
-                      <div class='col-md-6' id='vid".$liste_videos[$i]->_id_video."' style='padding: 0px; display: none;'>
-                        
-                        <video width='100%' height='100%' id='video".$liste_videos[$i]->_id_video."' controls>
-                          <source src='videos/".$liste_videos[$i]->_path."' type='video/mp4'>
-                          Votre navigateur ne supporte pas la lecture des vidéos
-                        </video>
-
-                      </div>";    
-
-                  }
-                ?>
-
               <!-- fin espace lecteur -->
 
             </div>
@@ -153,28 +150,6 @@
   <?php
     include('footer.php');
   ?>
-
-  <script type="text/javascript">
-    
-    function choix_video(id_video){
-      document.getElementById('vid_vide').style.display = "none";
-      document.getElementById('vid' + id_video).style.display = "block";
-
-      id_video1 = parseInt(id_video);
-
-      for(var i=0;i<=15; i++){
-         if(id_video1 != i){
-          try{
-            document.getElementById('vid' + i).style.display = "none";
-            document.getElementById('video' + i).pause();
-          }catch(e){
-            continue;
-          }
-         }
-      }
-    }
-
-  </script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

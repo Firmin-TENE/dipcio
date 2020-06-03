@@ -9,6 +9,7 @@ body{
 .current_module {
 	font-weight: bold; 
 	font-size: x-large; 
+	
 	text-align: center; 
 	font-family: Constantia;
 	border: 2px solid #858796; 
@@ -204,4 +205,49 @@ a .card:hover{
 
 .demasquer{
 	display: block;
+}
+
+.location_title{
+	font-family: Constantia;
+	/*color: #DD3333; */
+	color: pink;
+	text-decoration: underline; 
+	text-decoration-color: #DD3333;
+}
+
+.location{
+	margin-left: 10px; 
+	color: black; 
+	font-weight: bold; 
+	font-family: Constantia;
+	color: white;
+}
+
+.centrer{
+	text-align: center;
+}
+
+.marge_option{
+	margin-top: 4px;
+}
+
+.titre-question{
+	margin: 20px; 
+	margin-right: 10px; 
+	text-align: left; 
+	font-weight: bold; 
+	font-size: large; 
+	font-family: Constantia; 
+	color: black;
+}
+
+.question{
+	font-size: 7px; 
+	margin: 0; 
+	max-width: 50%; 
+	width: 92%; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	padding-left: 5px; 
+	padding-right: 5px; "
 }

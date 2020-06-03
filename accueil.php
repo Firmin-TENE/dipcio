@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include('current_url.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,7 @@
                 <div class="row">
                   <div class="col-md-4">
 
-                    <a href="#" style="background-color: red;">
+                    <a href="lecons.php" style="background-color: red;">
                     
                       <div class="card">
                         <img class="card-img-top" src="img/livre1.jpg" alt="Leçons">
@@ -122,7 +123,7 @@
 
                   <div class="col-md-4">
 
-                    <a href="glossaire.php" style="background-color: red;">
+                    <a href="lexique.php" style="background-color: red;">
                     
                       <div class="card">
                         <img class="card-img-top" src="img/glossaire4.png" alt="Leçons">

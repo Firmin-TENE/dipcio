@@ -76,6 +76,32 @@
 
 
 	}
+
+	class Prerequis{
+
+		public $_question;
+		public $_prop1;
+		public $_prop2;
+		public $_prop3;
+		public $_prop4;
+		public $_reponse;
+		public $_id_prerequis;
+		public $_id_proposition;
+
+		function __construct($_question, $_prop1, $_prop2, $_prop3, $_prop4, $_reponse, $_id_prerequis, $_id_proposition){
+			$this->_question = $_question;
+			$this->_prop1 = $_prop1;
+			$this->_prop2 = $_prop2;
+			$this->_prop3 = $_prop3;
+			$this->_prop4 = $_prop4;
+			$this->_reponse = $_reponse;
+			$this->_id_prerequis = $_id_prerequis;
+			$this->_id_proposition = $_id_proposition;
+
+		}
+
+	}
+
 	class Competence{
 		private $_id_competence;
 		private $_competence;
@@ -174,14 +200,14 @@
 
 	#fonction de deconnexion
 
-	function deconnexion(){
+	function deconnexion($actual_link){
 		session_start();
 		$_SESSION = array();
 		session_destroy();
 		setcookie('identifiant', '');
 		setcookie('password','');
 
-		return header('Location: accueil.php');
+		return header('Location: '.$actual_link);
 	}
 
 	#################################################################################
@@ -298,6 +324,7 @@
 		$i = 0;
 		while($donnee = $rep->fetch()){
 			$result[$i] = new Competence($donnee['id_competence'], $donnee['competence'], $donnee['id_cours']);
+			$i++;
 		}
 
 		$rep->closeCursor();
@@ -320,6 +347,7 @@
 		$i = 0;
 		while($donnee = $rep->fetch()){
 			$result[$i] = new Video($donnee['id_video'], $donnee['titre'], $donnee['path']);
+			$i++;
 		}
 
 		$rep->closeCursor();
@@ -336,6 +364,31 @@
 
 	############################# Fin Module Vidéo ########################################
 	#######################################################################################
+
+
+
+	###########################################################################################
+	############################### Module Leçons ############################################
+
+	function questionnaires($id_cours){
+
+		global $bd;
+		$result = [];
+
+		$rep = $bd->query('select * from prerequis p inner join propositions pr where p.id_prerequis and pr.id_prerequis and p.id_cours = '.$id_cours);
+
+		$i=0;
+
+		while($donnee = $rep->fetch()){
+			$result[$i] = new Prerequis($donnee['question'], $donnee['prop1'], $donnee['prop2'], $donnee['prop3'], $donnee['prop4'], $donnee['prop4'], $donnee['reponse'], $donnee['id_prerequis'], $donnee['id_prop']);
+			$i++;
+		}
+
+		$rep->closeCursor();
+
+		return $result;
+
+	}
 
 
 ######################### Fin de mes fonctions ###############################################################

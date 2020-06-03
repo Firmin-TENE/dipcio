@@ -1,4 +1,11 @@
 <?php
 	include('bd.php');
-	deconnexion();
+
+	if(isset($_SESSION['url'])){
+		deconnexion($_SESSION['url']);
+		session_unregister('url');
+	}
+	else{
+		deconnexion('http://localhost/dipcio/accueil.php');
+	}
 ?>
