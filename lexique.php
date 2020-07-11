@@ -8,7 +8,7 @@
 	<head>
 
 	  <?php
-	    include('meta.php');
+	    include('meta.php');	
 	  ?>
 	  <title>LEXIQUE</title>
 
@@ -24,14 +24,11 @@
 	<body id="page-top">
 
 	  <!-- Page Wrapper -->
-	  <div id="wrapper">
+	   <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
 
-
-	    <!-- Content Wrapper -->
-	    <div class="row d-flex justify-content-center">
-	      <div id="content-wrapper" class="col-md-9 entete"   style="background-color: #343b7c;">
-
-
+		    <!-- Content Wrapper -->
+		 <div class="row d-flex justify-content-center" style="height: 100%">
+		    <div id="content-wrapper" class="col-md-9 entete" style="height: 92%; overflow: hidden; background-color: #343b7c;">
 	        <!-- Debut réel du body -->
 	        <!-- Main Content -->
 	        <div id="content">
@@ -79,7 +76,7 @@
 	                      $n = count($mot_cles);
 
 	                      for($i = 0; $i<$n; $i++){
-	                        echo "<option value='".$mot_cles[$i]->id()."'>".utf8_encode($mot_cles[$i]->mot_cle())."</option>";
+	                        echo "<option value='".$mot_cles[$i]->id()."'>".utf8_decode($mot_cles[$i]->mot_cle())."</option>";
 	                      }
 
 	                    ?>
@@ -100,10 +97,10 @@
 
 	                  echo "
 	                      
-	                  <div class='col-md-6' id='def".$mot_cles[$i]->id()."' style='display: none; padding: 0px; background-color: #F4F3ED; border-radius: 20px;'>
+	                  <div class='col-md-7' id='def".$mot_cles[$i]->id()."' style='display: none; padding: 0px; background-color: #F4F3ED; border-radius: 20px;'>
 
 	                    <!-- pour le titre du mot à définir -->
-	                    <div class='row' style='margin-top: 50px; margin-right: 30px; text-align: center; font-weight: bold; font-size: x-large;'>
+	                    <div class='row' style='margin-top: 50px; margin-right:1px; text-align: center; font-weight: bold; font-size: x-large;'>
 	                        <div class='col-md-12' style='text-decoration: underline; text-decoration-color: #DD3333; color: #DD3333;'>".utf8_encode($mot_cles[$i]->mot_cle())."
 	                        </div>
 	                    </div>
@@ -132,6 +129,11 @@
 
 
 	      </div>
+
+	       <?php
+	    		include('footer.php');
+	 		?>
+
 	    </div>
 	    <!-- End of Content Wrapper -->
 
@@ -145,9 +147,6 @@
 
 
 	  <!-- pieds de page -->
-	 <?php
-	    include('footer.php');
-	 ?>
 
 	  <script type="text/javascript">
 	    

@@ -48,19 +48,42 @@
       </li>
     </div>
 
+
+     <?php
+        if(!isset($_SESSION['identifiant'])){
+      ?>
+
     <li class="nav-item">
-      <a class="nav-link help" href="connexion.php" id="btn_connect" role="button" >
-        <?php
-            if(!isset($_SESSION['identifiant'])){
-              echo "<span class='text-white' style='padding-right: 5px;'>Connexion</span>";
-            }
-        ?> 
-      </a>
+        <a class="nav-link help" href="connexion.php" id="btn_connect" role="button" >
+            <span class="text-white" style="padding-right: 5px;">Connexion</span>
+        </a>
     </li>
+
+    <?php
+      }
+    ?>
+
+    <?php
+
+      if(isset($_SESSION['identifiant'])){
+          if($_SESSION['role'] == 'enseignant'){
+
+    ?>
+      <!-- Nav Item - Help -->
+      <li class="nav-item">
+        <a class="nav-link" href="admin.php" id="messagesDropdown" role="button" >
+          <span class="text-white help" style="padding-right: 5px;">Administration</span> <i class="fa fa-cogs" style="color: #fef;" aria-hidden="true"></i>
+        </a>
+      </li>      
+
+    <?php
+      }
+    }
+    ?>
 
     <!-- Nav Item - Help -->
     <li class="nav-item">
-      <a class="nav-link" href="#" id="messagesDropdown" role="button" >
+      <a class="nav-link" href="aide.php" id="messagesDropdown" role="button" >
         <span class="text-white help" style="padding-right: 5px;">Aide</span> <i class="fas fa-question-circle" style="color: #fef;"></i>
       </a>
     </li>

@@ -1,0 +1,42 @@
+volume = []
+    age = []
+    quantity = []
+    labels = []
+    
+    #je récupère les index
+    index = items_pd.index
+    
+    #pour chaque item, je fais les extraction et j'ajoute dans une liste
+    
+    for i in index:
+        item_name = items_pd.loc[i, 'item_name']
+        # je détermine d'abord sa classe
+        label = predict(item_name,'items_classification/save/model', 'items_classification/save/vectorizer')
+        labels.append(label)
+        
+        #s'il s'agit d'un plat, j'extrait la quantité
+        if label == 'plat':
+            volume.append('')
+            age.append('')
+            qte = extract_quantity(item_name)
+            quantity.append(qte)
+            
+        elif label == 'boisson':
+            quantity.append('')
+            v = extract_volume(item_name)
+            a = extract_age(item_name)
+            volume.append(v)
+            age.append(age)
+        
+        else:
+            #other
+            volume.append('')
+            age.append('')
+            quantity.append('')
+    
+    #enfin j'ajoute le résultat de l'extraction au dataFrame
+    pos = items_pd.columns.get_loc("item_name")
+    items_pd.insert(pos+1, 'label', labels)
+    items_pd.insert(pos+2, 'quantity', quantity)
+    items_pd.insert(pos+3, 'volume', volume)
+    items_pd.insert(pos+4, 'âge', age)

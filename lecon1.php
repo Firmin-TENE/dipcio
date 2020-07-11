@@ -54,7 +54,7 @@
                 
                 <div class="row" style="height: 30px;"></div>
                 <div class="row" style="margin-bottom: 20px;">
-                   <div class="col-md-12 current_module"> 
+                   <div class="col-md-12 current_module2" style="font-size: 1.5em"> 
                     <span>UE1: IDENTIFICATION DES PORTS ET DE LEURS ROLES</span>
                   </div>
                 </div>
@@ -113,11 +113,11 @@
               <!-- espace lecteur -->
               <div class="col-md-7" style="padding: 0px; background-color: #F4F3ED; border-radius: 20px;">
 
-                <!-- contenu module -->
+                <!-- compétences -->
                 <div class="row" id="competence" style="height: 88%;overflow-y: auto; display: block;">
                   <div class="col-md-12">
                     <!-- pour le titre du mot à définir -->
-                    <div class="row" style="margin: 20px; margin-right: 10px; martext-align: left; font-weight: bold; font-size: x-large; font-family: Constantia;">
+                    <div class="row" style="margin: 20px; margin-right: 10px; martext-align: left; font-weight: bold; font-size: 1.3em; font-family: Constantia;">
                         <div class="col-md-12" style="color: #bf360c;">
                           Au terme de cette unité d'enseignement, je dois être capable de:
                         </div>
@@ -131,18 +131,16 @@
                       $liste_competences = liste_competences($id_cours);
                       $n = count($liste_competences);
 
-
                       for($i=0; $i<$n;$i++){
-                        echo "
-                          <div class='row' style='font-weight: bold; color: black; font-family: Constantia; font-size:1.2em'>
-                             <div class='col-md-11' style='margin-left: 50px; margin-top: 10px; line-height: 1.5; margin-right: 7em; text-align: justify;'> 
-                                 <i class='fa fa-umbrella' aria-hidden='true' style='margin-right:3px;'></i>".utf8_encode($liste_competences[$i]->competence())."
-                             </div> 
-                          </div>";
-
-                      }
-
                     ?>
+                        
+                      <div class="row" style="font-weight: bold; color: black; font-family: Constantia; font-size:1.2em">
+                         <div class="col-md-11" style="margin-left: 50px; margin-top: 10px; line-height: 1.5; margin-right: 7em; text-align: justify;"> 
+                             <i class="fa fa-umbrella" aria-hidden="true" style="margin-right:8px;"></i>
+                             <?= utf8_encode($liste_competences[$i]->competence()); ?>
+                         </div> 
+                      </div>
+                    <?php } ?>
                   </div>
                </div>
 
@@ -162,76 +160,52 @@
                 <!-- questionnaire -->
                 <?php
 
-                $liste_questions = questionnaires($_GET['l']);
-                $n = count($liste_questions);
+                  $liste_questions = questionnaires($_GET['l']);
+                  $n = count($liste_questions);
 
-                for($i=0; $i<$n;$i++){
+                  $id_cours = $_GET['l'];
 
-                  $deb = "";
+                  for($i=0; $i<$n;$i++){
 
-                  if($i == 0){
-                    $deb = "<div class='demasquer' id='l".$id_cours."-".$i."-'".$liste_questions[$i]->_id_prerequis."> ";
-                  }
-                  else{
-                    $deb = "<div class='masquer' id='l".$id_cours."-".$i."-'".$liste_questions[$i]->_id_prerequis."> ";
-                  }
+                ?>
                   
-                  echo $deb."
-                  
-                     <div class='row titre-question' style='color: gray;'>
-                        <div class='col-md-12 d-flex justify-content-center'>
-                          <span style='margin-right: 5px; text-decoration: underline;'>Question: </span> ".utf8_decode($liste_questions[$i]->_question)."
-                        </div>
+                  <div class="row titre-question" style="color: gray;">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <span style="margin-right: 5px; text-decoration: underline;">Question: </span> <?= utf8_encode($liste_questions[$i]->_question)?>
+                    </div>
 
-                      <!-- Fin Question -->
+                    <!-- Fin Question -->
 
-
-                      <!-- Image optionnelle -->
-                      <div class='row titre-question' style='color: gray; display: none;'>
-                        <div class='col-md-12 d-flex justify-content-center'>
-                          <img src='img/livre1.jpg' width='150px' height='130px'>
-                        </div>
-                      </div>
-                      <!-- Image optionnelle -->
-
-                      <!-- Propositions -->
-
-                      <div class='row titre-question' style='color: gray; border-radius: 12px; margin-top: 4  0px; margin-bottom: 10px;'>
-                        
-                        <div class='col-md-12'>
-                          <div class='row' style='height: 50%;'>
-
-                            <div class='btn question'>
-                                <a href='#' class='btn' onclick='verification(".utf8_encode($liste_questions[$i]->_prop1).",".utf8_encode($liste_questions[$i]->_prop2).",".utf8_encode($liste_questions[$i]->_prop3).",".utf8_encode($liste_questions[$i]->_prop4).",".utf8_encode($liste_questions[$i]->_reponse).")' id='prop1' style='border: 1px solid black;'>".utf8_encode($liste_questions[$i]->_prop1)."</a>
-                            </div>
-
-                            <div class='btn question'>
-                                <a href='#' class='btn' onclick='verification(".utf8_encode($liste_questions[$i]->_prop1).",".utf8_encode($liste_questions[$i]->_prop2).",".utf8_encode($liste_questions[$i]->_prop3).",".utf8_encode($liste_questions[$i]->_prop4).",".utf8_encode($liste_questions[$i]->_reponse).")' id='prop2' style='border: 1px solid black;'>".utf8_encode($liste_questions[$i]->_prop2)."</a>
-                            </div>
-                          </div>
-
-                          <div class='row' style='height: 50%;'>
-                           <div class='btn question'>
-                                <a href='#' class='btn' onclick='verification(".utf8_encode($liste_questions[$i]->_prop1).",".utf8_encode($liste_questions[$i]->_prop2).",".utf8_encode($liste_questions[$i]->_prop3).",".utf8_encode($liste_questions[$i]->_prop4).",".utf8_encode($liste_questions[$i]->_reponse).")' id='prop3' style='border: 1px solid black;'>".utf8_encode($liste_questions[$i]->_prop3)."</a>
-                            </div>
-                            <div class='btn question'>
-                                <a href='#' class='btn' onclick='verification(".utf8_encode($liste_questions[$i]->_prop1).",".utf8_encode($liste_questions[$i]->_prop2).",".utf8_encode($liste_questions[$i]->_prop3).",".utf8_encode($liste_questions[$i]->_prop4).",".utf8_encode($liste_questions[$i]->_reponse).")' id='prop4' style='border: 1px solid black;'>".utf8_encode($liste_questions[$i]->_prop4)."</a>
-                            </div>
-                          </div>
-
-                        </div>
+                    <!-- Image optionnelle -->
+                    <div class='row titre-question' style='color: gray; display: none;'>
+                      <div class='col-md-12 d-flex justify-content-center'>
+                        <img src='img/livre1.jpg' width='150px' height='130px'>
                       </div>
                     </div>
 
-                  </div>";
-                  }
+                    <div class='row titre-question' style='color: gray; border-radius: 12px; margin-top: 4  0px; margin-bottom: 10px;'>
+                        
+                      <div class='col-md-12'>
+                        <div class='row' style='height: 50%;'>
 
-                  ?>
+                          <div class='btn question'>
+                              
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    </div>
+
+                  </div>
+ 
+                  <?php }?>
                     <!-- Propositions -->
-
-
-
                 </div>
+
+
+
 
               </div>
 
@@ -243,7 +217,7 @@
                <div class="row" style="height: 12%; border-top: 2px solid black; margin-left: 5px; margin-right: 5px;">
 
                   <div class="col-md-4 centrer marge_option">
-                    <a href="#" id="precedent" class="masquer btn" ><i class="fas fa-arrow-left" style="margin-right: 3px;"></i>Précédent</a>
+                    <a href="#" onclick="precedent();" id="precedent" class="masquer btn" ><i class="fas fa-arrow-left" style="margin-right: 3px;"></i>Précédent</a>
                   </div>
 
                    <div class="col-md-4 centrer marge_option">
@@ -294,13 +268,12 @@
   ?>
 
   <script type="text/javascript">
+
+    comp = document.getElementById('competence');
+    prer = document.getElementById('prerequis');
     
     function suivant(){
       //alert("Module prérequis")
-      comp = document.getElementById('competence');
-      prer = document.getElementById('prerequis');
-
-
 
       //si il s'agit des comùpétence, on va à l'étape suivante:
       if(comp.style.display == "block"){
@@ -312,12 +285,15 @@
     }
 
 
-    function verification(prop1, prop2, prop3, prop4, rep){
-
+    function precedent(){
+      //alert('bonjour');
+      if(prer.style.display == "block"){
+        comp.style.display = "block";
+        prer.style.display = "none";
+        document.getElementById('precedent').style.display = "none";
+        document.getElementById('score').style.display = "block";
+      }
     }
-
-
-
 
   </script>
 

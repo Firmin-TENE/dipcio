@@ -22,12 +22,13 @@
 <body id="page-top">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+  <!-- Page Wrapper -->
+  <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
 
 
     <!-- Content Wrapper -->
-    <div class="row d-flex justify-content-center">
-      <div id="content-wrapper" class="col-md-9 entete"   style="background-color: #343b7c;">
+    <div class="row d-flex justify-content-center" style="height: 100%">
+      <div id="content-wrapper" class="col-md-9 entete" style="height: 92%; overflow: hidden; background-color: #343b7c;">
 
 
         <!-- Debut réel du body -->
@@ -153,6 +154,10 @@
 
 
       </div>
+
+      <?php
+        include('footer.php');
+      ?>
     </div>
     <!-- End of Content Wrapper -->
 
@@ -165,9 +170,7 @@
   </a>
 
   <!-- pieds de page -->
- <?php
-    include('footer.php');
- ?>
+ 
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

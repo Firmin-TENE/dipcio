@@ -50,6 +50,7 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
+  height: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -64,6 +65,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  height: 100%;
   color: #858796;
   text-align: left;
   background-color: #fff;
@@ -9572,7 +9574,7 @@ a:focus {
 #wrapper #content-wrapper {
   background-color: #f8f9fc;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #wrapper #content-wrapper #content {

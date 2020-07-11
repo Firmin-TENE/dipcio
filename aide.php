@@ -1,6 +1,5 @@
 <?php
   session_start();
-  include('bd.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +10,7 @@
     include('meta.php');
   ?>
 
-  <title>VIDEOS</title>
+  <title>AIDE</title>
 
   <?php
     include('link.php');
@@ -19,10 +18,10 @@
 
 </head>
 
-<body id="page-top">
+<body>
 
   <!-- Page Wrapper -->
- <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
+  <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
 
 
     <!-- Content Wrapper -->
@@ -53,7 +52,7 @@
                 <div class="row" style="height: 30px;"></div>
                 <div class="row" style="margin-bottom: 20px;">
                    <div class="col-md-12 current_module"> 
-                    <span>VIDEOS</span>
+                    <span>AIDE</span>
                   </div>
                 </div>
               </div>
@@ -66,62 +65,28 @@
             <!-- Fin L'entête contenant le retour à l'accueil et le titre du module -->
 
             <!-- contenu du module -->
-            <div class="row details-modules" style="margin-bottom: 10px;">
-              <!-- liste des vidéos -->
-              <div class="col-md-3" style="height: 23.5em; overflow-y: auto;">
-                
-                <?php
-                  $liste_videos = liste_videos();
-                  $n = count($liste_videos);
-
-                  for($i=0;$i<$n;$i++){
-                    $titre =utf8_encode($liste_videos[$i]->_titre);
-                    echo "
-                      <a href='#' onclick='choix_video(".$liste_videos[$i]->_id_video.");' id='lien".$liste_videos[$i]->_id_video."'>  
-                        <div class=''>
-                          <img src='img/video_det1.png' class='video-icone' alt='vidéos UE1'>
-                          <div class='card-body card-module'>
-                            <h3 class='video-title'>".$titre."</h3>
-                          </div>
-                        </div>                      
-                      </a>";         
-
-                  }
-                ?>
-                  
-
-              </div>
-              <!-- fin liste des vidéos -->
+            <div class="row details-modules d-flex justify-content-center" style="margin-bottom: 10px;">
 
               <!-- espace lecteur -->
-              <div class="col-md-6" id="vid_vide" style="padding: 0px;">
-                
-                <video width="100%" height="100%" controls>
-                  <source type="video/mp4">
-                  Votre navigateur ne supporte pas la lecture des vidéos
-                </video>
+              <div class="col-md-8" id="aide" style="padding: 0px; text-align: justify; color: #6355355">
+                 DIPCIO est un didacticiel qui permet d'apprendre à identifier les ports et les
+                 composants internes d'un ordinateur ainsi que de leurs rôles. A cet effet, il est organisé en plusieurs modules: 
+
+                 <ul>
+                   <li>Le module <b>Leçons: </b> Ce module permet à l'élève d'acquerir des compétences sur les différentes unités d'enseignement qui constitue cette séquence pédagogique.</li>
+
+                   <li>Le module <b>Activités: </b> Ce module permet à l'élève de faire des exercices pour vérifier ses acquis. </li>
+
+                   <li>Le module <b>Vidéos: </b> Ce module permet à l'élève de voir des vidéos qui vont lui permettre de consolider d'avantage ses connaissances sur la séquence d'apprentissage</li>
+
+                   <li>Le module <b>Glossaire: </b> Ce module permet à l'élève de retrouver la définition des mots clefs qui gravitent autour de cette séquence d'apprentissage.</li>
+
+                  <li>Le module <b>Simulation: </b> Ce module permet à l'élève de simuler pour approfondir ses acquis.</li>
+                 </ul>
+
+                 En plus de ces modules, l'application offre au enseignant un panneau d'administration leur permettant de modifier certains contenus, mais également d'accomplir d'autres tâches.
 
               </div>
-
-                <?php
-                  $liste_videos = liste_videos();
-                  $n = count($liste_videos);
-
-                  for($i=0;$i<$n;$i++){
-                    echo "
-                      <div class='col-md-6' id='vid".$liste_videos[$i]->_id_video."' style='padding: 0px; display: none;'>
-                        
-                        <video width='100%' height='100%' id='video".$liste_videos[$i]->_id_video."' controls>
-                          <source src='videos/".$liste_videos[$i]->_path."' type='video/mp4'>
-                          Votre navigateur ne supporte pas la lecture des vidéos
-                        </video>
-
-                      </div>";    
-
-                  }
-                ?>
-
-              <!-- fin espace lecteur -->
 
             </div>
 
@@ -134,17 +99,17 @@
         </div>
         <!-- End of Main Content -->
 
-
       </div>
 
-      <!-- pieds de page -->
-      <?php
+     <?php
         include('footer.php');
-      ?>
+     ?>
 
     </div>
     <!-- End of Content Wrapper -->
 
+    <!-- pieds de page -->
+ 
   </div>
   <!-- End of Page Wrapper -->
 
@@ -153,6 +118,9 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+ 
+
+  
   <script type="text/javascript">
     
     function choix_video(id_video){

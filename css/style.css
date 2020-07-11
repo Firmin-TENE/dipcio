@@ -18,6 +18,18 @@ body{
 	color: #ffab40;
 }
 
+.current_module2 {
+	font-weight: bold; 
+	font-size: large; 
+	
+	text-align: center; 
+	font-family: Constantia;
+	border: 2px solid #858796; 
+	border-radius: 10px; 
+	/*color: #f3e5f5;*/
+	color: #ffab40;
+}
+
 .title{
 	font-family: Constantia;
 	font-size: 20px;
@@ -38,10 +50,16 @@ body{
 	font-size: x-large;
 }
 
+.details-modules{
+	margin-top: 31vh;
+	transform: translateY(-50%);
+}
+
 #modules{
 	padding: 2em; 
-	margin-bottom: 1.4em;
-	margin-top: 1em;
+	margin-bottom: 2%;
+	margin-top: 37vh;
+	transform: translateY(-50%);
 	/*background-image: url("../img/background1.jpg");*/
 }
 
@@ -127,10 +145,11 @@ a .card:hover{
 
 .details-modules .col-md-3{
 	/*border: 2px solid #858796;*/
-	height: 23em;
+	height: 20%;
 	border-radius: 30px;
 	margin-left: 3px;
 	margin-top: 5px;
+	max-width: 19%;
 	margin-right: 0.2em;
 }
 
@@ -148,7 +167,7 @@ a .card:hover{
 	height: 25em;
 	padding-top: 20px;
 	padding-bottom: 30px;
-	margin-left: 4em;
+	margin-left: 1.6em;
 	background-color: #000; 
 }
 
@@ -212,7 +231,7 @@ a .card:hover{
 	/*color: #DD3333; */
 	color: pink;
 	text-decoration: underline; 
-	text-decoration-color: #DD3333;
+	text-decoration-color: pink;
 }
 
 .location{
