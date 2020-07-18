@@ -55,12 +55,47 @@ body{
 	transform: translateY(-50%);
 }
 
+.card_ue{
+	margin: 5px; 
+	margin-top: 4%; 
+	margin-left: 20px; 
+	text-align: justify;
+	font-size: 90%;
+	margin-right: 20px;
+}
+
+.test{
+	border: 1px solid black;
+}
+
+.lien_ue:hover{
+	text-decoration: underline;
+	text-decoration-color: #64b5f6;
+}
+
+.chx_ue{
+	font-family: Constantia; 
+	color: white; 
+	font-weight: bold; 
+	background-color: #ff00ff;
+}
+
+.details-modules1{
+
+	margin-top: 30vh;
+	transform: translateY(-50%);
+}
+
 #modules{
 	padding: 2em; 
 	margin-bottom: 2%;
 	margin-top: 37vh;
 	transform: translateY(-50%);
 	/*background-image: url("../img/background1.jpg");*/
+}
+
+.sty_score{
+	margin-left: 10px;
 }
 
 #modules a{
@@ -229,9 +264,15 @@ a .card:hover{
 .location_title{
 	font-family: Constantia;
 	/*color: #DD3333; */
-	color: pink;
+	color: #d50000;
 	text-decoration: underline; 
 	text-decoration-color: pink;
+}
+
+.mod{
+	margin: 5px; 
+	margin-bottom: 10px; 
+	font-size: large;
 }
 
 .location{
@@ -240,6 +281,12 @@ a .card:hover{
 	font-weight: bold; 
 	font-family: Constantia;
 	color: white;
+}
+
+.tableau{
+	background-image: url('../Images/tableau.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .centrer{

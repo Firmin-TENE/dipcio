@@ -68,28 +68,28 @@
             <!-- contenu du module -->
             <div class="row details-modules" style="margin-bottom: 10px;">
               <!-- liste des vidéos -->
-              <div class="col-md-3" style="height: 23.5em; overflow-y: auto;">
+              <div class="col-md-3" style="height: 23.5em; overflow-y: auto;  max-width: 24%; padding-top: 2%;">
                 
                 <?php
                   $liste_videos = liste_videos();
                   $n = count($liste_videos);
 
                   for($i=0;$i<$n;$i++){
-                    $titre =utf8_encode($liste_videos[$i]->_titre);
-                    echo "
-                      <a href='#' onclick='choix_video(".$liste_videos[$i]->_id_video.");' id='lien".$liste_videos[$i]->_id_video."'>  
-                        <div class=''>
-                          <img src='img/video_det1.png' class='video-icone' alt='vidéos UE1'>
-                          <div class='card-body card-module'>
-                            <h3 class='video-title'>".$titre."</h3>
-                          </div>
-                        </div>                      
-                      </a>";         
+                
+                ?>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button type="button" class="btn btn-dark" onclick="choix_video(<?= $liste_videos[$i]->_id_video ?>)" style=" margin-bottom: 4%;"> 
+                      <?= $liste_videos[$i]->_titre ?>
+                    </button> 
 
+                  </div>  
+                </div>
+                
+                <?php
                   }
                 ?>
-                  
-
+      
               </div>
               <!-- fin liste des vidéos -->
 

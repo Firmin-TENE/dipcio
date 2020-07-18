@@ -7,6 +7,7 @@
 
 	<head>
 
+	  <script src="jquery-3.1.1.min.js"></script>
 	  <?php
 	    include('meta.php');	
 	  ?>
@@ -76,7 +77,7 @@
 	                      $n = count($mot_cles);
 
 	                      for($i = 0; $i<$n; $i++){
-	                        echo "<option value='".$mot_cles[$i]->id()."'>".utf8_decode($mot_cles[$i]->mot_cle())."</option>";
+	                        echo "<option value='".$mot_cles[$i]->id()."'>".$mot_cles[$i]->mot_cle()."</option>";
 	                      }
 
 	                    ?>
@@ -101,7 +102,7 @@
 
 	                    <!-- pour le titre du mot à définir -->
 	                    <div class='row' style='margin-top: 50px; margin-right:1px; text-align: center; font-weight: bold; font-size: x-large;'>
-	                        <div class='col-md-12' style='text-decoration: underline; text-decoration-color: #DD3333; color: #DD3333;'>".utf8_encode($mot_cles[$i]->mot_cle())."
+	                        <div class='col-md-12' style='text-decoration: underline; text-decoration-color: #DD3333; color: #DD3333;'>".$mot_cles[$i]->mot_cle()."
 	                        </div>
 	                    </div>
 
@@ -149,6 +150,15 @@
 	  <!-- pieds de page -->
 
 	  <script type="text/javascript">
+
+	  	$(document).ready(function(){
+	  		var myOpts = document.getElementById('lex').options;
+	  		if(myOpts.length>2){
+	  			$('#lex').val(myOpts[1].value).change();
+	  		}
+	  		
+	    });
+
 	    
 	    function itemChange(selectObj){
 	      var ind = selectObj.selectedIndex;
@@ -177,12 +187,11 @@
 	    }
 	  </script>
 
-	  <!-- include jQuery -->
-	  <script src="js/js/jquery.js"></script>
+	  <script src="js/js/jquery.main.js"></script>
 	  <!-- include jQuery -->
 	  <script src="js/js/plugins.js"></script>
 	  <!-- include jQuery -->
-	  <script src="js/js/jquery.main.js"></script>
+	
 	  <!-- include jQuery -->
 	  <script type="text/javascript" src="js/js/init.js"></script>
 
