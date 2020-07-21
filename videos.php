@@ -68,7 +68,7 @@
             <!-- contenu du module -->
             <div class="row details-modules" style="margin-bottom: 10px;">
               <!-- liste des vidéos -->
-              <div class="col-md-3" style="height: 23.5em; overflow-y: auto;  max-width: 24%; padding-top: 2%;">
+              <div class="col-md-3" style="height: 23.5em;   max-width: 24%; padding-top: 2%; ">
                 
                 <?php
                   $liste_videos = liste_videos();
@@ -78,8 +78,8 @@
                 
                 ?>
                 <div class="row">
-                  <div class="col-md-12">
-                    <button type="button" class="btn btn-dark" onclick="choix_video(<?= $liste_videos[$i]->_id_video ?>)" style=" margin-bottom: 4%;"> 
+                  <div class="col-md-12" style="overflow-y: auto; padding-bottom: 50px;">
+                    <button type="button" class="btn btn-dark" onclick="choix_video(<?= $liste_videos[$i]->_id_video ?>)" style=" margin-bottom: 4%; background-color: #197278; font-weight: bold; font-family: constantia;"> 
                       <?= $liste_videos[$i]->_titre ?>
                     </button> 
 

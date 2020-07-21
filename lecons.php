@@ -103,7 +103,7 @@
                   <div class="col-md-12">
                    <a class="lien_ue" href="lecon1.php?l=1">
                     <i class="fas fa-book-reader fa-2x" style="color: #fef; margin-right: 5px;"> <span style="font-size: large;">UE1:</span></i>
-                     <span style="color: #64b5f6; font-family: Constantia;"">IDENTIFICATION DES PORTS D'UN ORDINATEUR AINSI QUE LEURS RÔLES</span>
+                     <span style="color: #fef; font-family: Constantia;"">IDENTIFICATION DES PORTS D'UN ORDINATEUR AINSI QUE LEURS RÔLES</span>
                    </a>
                   </div>
                 </div>
@@ -112,7 +112,7 @@
                   <div class="col-md-12">
                    <a class="lien_ue" href="lecon1.php?l=1">
                     <i class="fas fa-book-reader fa-2x" style="color: #fef; margin-right: 5px;"> <span style="font-size: large;">UE2:</span></i>
-                        <span style="color: #64b5f6; font-family: Constantia;">IDENTIFICATION DES COMPOSANTS INTERNES D'UN ORDINATEUR AINSI QUE LEURS RÔLES</span>
+                        <span style="color: #fef; font-family: Constantia;">IDENTIFICATION DES COMPOSANTS INTERNES D'UN ORDINATEUR AINSI QUE LEURS RÔLES</span>
                     </a>
                   </div>
                 </div>

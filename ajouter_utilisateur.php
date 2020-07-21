@@ -20,18 +20,12 @@
 
 <body id="page-top" class="h-100">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper" class="mh-100">
+    <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
 
 
     <!-- Content Wrapper -->
-    <div class="row d-flex justify-content-center">
-      <div id="content-wrapper" class="col-md-9 entete"   style="background-color: #343b7c;">
-
-
-        <!-- Debut réel du body -->
-        <!-- Main Content -->
-        <div id="content">
+    <div class="row d-flex justify-content-center" style="height: 100%">
+      <div id="content-wrapper" class="col-md-9 entete" style="height: 92%; overflow: hidden; background-color: #343b7c;">
 
           <!-- Topbar -->
           <nav class="navbar navbar-expand navbar-light bg-blue topbar static-top shadow" style="margin-bottom: 0.9em;">
@@ -157,7 +151,9 @@
 
         </div>
         <!-- End of Main Content -->
-
+         <?php
+          include('footer.php');
+          ?>
 
       </div>
     </div>
@@ -172,9 +168,7 @@
   </a>
 
   <!-- pieds de page -->
-  <?php
-      include('footer.php');
-  ?>
+ 
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

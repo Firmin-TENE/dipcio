@@ -1,12 +1,3 @@
-<?php 
-require_once('database/Database.php');
-$db = new Database();
-$sql = "SELECT *
-		FROM doc_types
-		ORDER BY libelle ASC";
-$types = $db->getRows($sql);
-$db->Disconnect();
- ?>
 <div class="modal fade" id="modal-laun">
 	<div class="modal-dialog">
 		<div class="modal-content">

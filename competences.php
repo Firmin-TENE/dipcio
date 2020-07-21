@@ -21,7 +21,7 @@
 		  <div class="row" style="font-weight: bold; color: white; font-family: Constantia; font-size:1.2em">
 		     <div class="col-md-11" style="margin-left: 50px; margin-top: 10px; line-height: 1.5; margin-right: 7em; text-align: justify;"> 
 		         <i class="fa fa-umbrella" aria-hidden="true" style="margin-right:8px;"></i>
-		         <?= utf8_encode($liste_competences[$i]->competence()); ?>
+		         <?= $liste_competences[$i]->competence(); ?>
 		     </div> 
 		  </div>
 		<?php } ?>

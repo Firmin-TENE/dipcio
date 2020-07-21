@@ -77,14 +77,14 @@
 
                 <div class="row" style="height: 100%;">
                   
-                  <div class="row" style="height: 38%;">
+                  <div class="row" style="height: 40%; margin-top: 12%">
 
                     <div class="col-md-1"></div>
                     <!-- quiz-->
                     <div class="col-md-4">
-                      <a href="qcm.php" style="text-align: center;">
-                        <img src="jeux/quiz.jpg", alt="quiz" width="85%" height="65%" style="border-radius: 10px;">
-                          <span style="margin-left: 5%; color: black;">Cliquer pour démarrer</span>
+                      <a href="qcm.php" style="text-align: center; color: white; font-weight: bold;">
+                        <img src="Images/quiz2.png", alt="quiz" width="85%" height="85%" style="border-radius: 10px; border: 2px solid white;">
+                          <span style="margin-left: 3%;">Cliquer pour démarrer</span>
                       </a>
                         
                     </div>
@@ -92,29 +92,14 @@
                     <div class="col-md-2"></div>
                      <!-- puzzle-->
                     <div class="col-md-4">
-                      <a href="#" style="text-align: center;">
-                        <img src="jeux/quiz.jpg", alt="quiz" width="85%" height="65%" style="border-radius: 10px; margin-left: 12%;">
-                          <span style="margin-left: 16.5%; color: black;">Cliquer pour démarrer</span>
+                      <a href="puzzle.php" style="text-align: center; color: white; font-weight: bold;">
+                        <img src="Images/memo.png", alt="quiz" width="85%" height="85%" style="border-radius: 10px; margin-left: -4%;">
+                          <span style="margin-left: 0%;">Cliquer pour démarrer</span>
                       </a>
                         
                     </div>
 
                   </div>
-
-                <div class="row" style="height: 38%;">
-                 
-                
-                   <div class="col-md-4"></div>
-                     <!-- Memo-->
-                    <div class="col-md-4">
-                      <a href="#" style="text-align: center;">
-                        <img src="jeux/quiz.jpg", alt="quiz" width="85%" height="65%" style="border-radius: 10px; margin-left: 5%;">
-                          <span style="margin-left: 10%; color: black;">Cliquer pour démarrer</span>
-                      </a>
-                        
-                    </div>
-                </div>
-
 
                 </div>
               </div>

@@ -6,17 +6,17 @@ function eMsg(message) {
 } //end eMsg
 
 //laundry type
-$('#newType').click(function(event) {
+$('#newVideo2').click(function(event) {
     /* Act on the event */
     $('#type-type').val('insert');
     $('#type').val('');
     $('#price').val('');
-    $('#modal-lau-type').find('.modal-title').text('Créer un nouveau type de document');
+    $('#modal-video').find('.modal-title').text('Ajouter une vidéo');
     $('#modal-lau-type').modal('show');
 });
 
 //inset new type
-$(document).on('submit', '#form-type', function(event) {
+$(document).on('submit', '#form-new-video', function(event) {
     event.preventDefault();
     /* Act on the event */
     var type_id = $('#type-id').val();
@@ -73,19 +73,19 @@ $(document).on('submit', '#form-type', function(event) {
 });
 
 //display type table
-function all_type() {
+function all_videos() {
     $.ajax({
-        url: 'data/all_types.php',
+        url: 'module/data/all_videos.php',
         type: 'post',
         success: function(data) {
-            $('#table-type').html(data);
+            $('#table-videos').html(data);
         },
         error: function() {
             eMsg(45);
         }
     });
 } //end all_type
-all_type();
+all_videos();
 
 //edit type
 function editType(type_id) {
@@ -112,7 +112,7 @@ function editType(type_id) {
 
 
 //all laundry
-function all_laundry() {
+/*function all_laundry() {
     $.ajax({
         url: 'data/all_laundry.php',
         type: 'post',
@@ -127,103 +127,141 @@ function all_laundry() {
         }
     });
 } //end all_laundry
-all_laundry();
+all_laundry();*/
 
+
+
+
+function tous_lexique(){
+    $.ajax({
+        url: 'module/data/admin_lexique.php',
+        type: 'post',
+        data: {
+        },
+        success: function(data) {
+            $('#table-laundry').html(data);
+        },
+        error: function() {
+            eMsg(128);
+        }
+    });
+}
+
+tous_lexique();
+
+function tous_cours(){
+    $.ajax({
+        url: 'module/data/cours.php',
+        type: 'post',
+        data: {
+        },
+        success: function(data) {
+            $('#table-laundry').html(data);
+        },
+        error: function() {
+            eMsg(128);
+        }
+    });
+}
+
+tous_cours();
 
 
 //open modal
-$('#newLaun').click(function(event) {
+$('#newLexique').click(function(event) {
     /* Act on the event */
     $('#laun-type').val('insert');
-    $('#modal-laun').find('.modal-title').text('Nouveau dossier');
+    $('#modal-laun').find('.modal-title').text('Nouveau mot-clé');
     $('#modal-laun').modal('show');
-
-
-    $('#cni').keyup(function() {
-        var field = $(this).val();
-        //alert('bonjour');
-        // on commence à traiter à partir du 2ème caractère saisie
-        if (field.length > 0) {
-            // on envoie la valeur recherché en GET au fichier de traitement
-            $.ajax({
-                type: 'POST', // envoi des données en GET ou POST
-                url: 'data/ajax-search.php', // url du fichier de traitement
-                data: {
-                    q: field
-                }, // données à envoyer en  GET ou POST
-                dataType: 'json',
-                beforeSend: function() { // traitements JS à faire AVANT l'envoi
-                    //$field.after('<img src="ajax-loader.gif" alt="loader" id="ajax-loader" />'); // ajout d'un loader pour signifier l'action
-                },
-                success: function(data) { // traitements JS à faire APRES le retour d'ajax-search.php
-                    /*$('#results').html(data); // affichage des résultats dans le bloc
-                    console.log(data);*/
-                    //console.log(data.error); //data.nom
-                    if (data.valid == false) {
-                        //alert('bonjour');
-                        $('#customer').attr('disabled', false);
-                        $('#customer').attr('value', '');
-                    } else {
-                        $('#customer').attr('value', data.depositaire);
-                        $('#customer').attr('disabled', true);
-                        //alert(data.depositaire);
-                    }
-                    //$('#nom').attr('value', 'test');
-
-                }
-            });
-        }
-    });
-
-
 });
 
-$(document).on('submit', '#form-new-laun', function(event) {
+
+//open modal
+$('#newVideo').click(function(event) {
+    //Act on the event 
+    $('#operation_type').val('insert');
+    $('#modal-video').find('.modal-title').text('Ajout d\'une vidéo');
+    $('#modal-video').modal('show');
+});
+
+
+
+/*$(document).on('submit', '#form-new-video', function(event) {
     event.preventDefault();
-    /* Act on the event */
-    var modal_type = $('#laun-type').val(); //insert/update
-    var laun_id = $('#laun-id').val(); //pk
 
-    var docID = $('#docID').val(); //pk
-    var customer = $('#customer').val(); //nom
-    var priority = $('#priority').val(); //classeur
-    var weight = $('#weight').val(); //qte
-    var type = $('#newlaun-type').val(); // type de doc
-   // alert(docID);
-    var cni = $('#cni').val(); // cni
+    var modal_operation = $('#operation_type').val(); //insert/update
 
-    if (modal_type == 'insert') {
+    if (modal_operation == 'insert') {
         $.ajax({
-            url: 'data/insert_laundry.php',
+            type: 'POST',
+            url: 'module/data/ajout_video.php',
+            data: new FormData(this),
+            dataType: 'json',
+            cpntentType: false,
+            cache: false,
+            processData:false,
+            success: function(data) {
+                if(data.valid == false){
+                    $('#modal-video').modal('hide');
+                    console.log(data.video);
+                }
+                else{
+                    console.log('erreur');
+                }
+            },
+            error: function(e) {
+                eMsg(163);
+            }
+
+        });
+    } 
+
+}); //end submit form */
+
+/*
+$.ajax({
+            url: 'module/data/insert_video.php',
             type: 'post',
             dataType: 'json',
             data: {
-                customer: customer,
-                priority: priority,
-                weight: weight,
-                type: type,
-                cni: cni
+                video_titre: video_titre
             },
             success: function(data) {
-                // console.log(data);
-                //all_laundry();
-                /*$('#customer').attr('value', '');
-                $('#priority').attr('value', '');
-                $('#weight').attr('value', '');
-                $('#cni').attr('value', '');*/
-                $('#modal-laun').modal('hide');
+               if(data['valid'] == true){
+                    $('#modal-video').modal('hide');
+                    all_videos();
+                    alert(data.fichier);
+                }
+            },
+            error: function(e) {
+                eMsg(163);
+            }
+        });
 
-                $.ajax({
-                    url: 'data/create_user.php',
-                    type: 'post',
-                    dataType: 'json',
-                    data: {
-                        customer: customer,
-                        cni: cni
-                    }
-                });
-                all_laundry();
+        */
 
+$(document).on('submit', '#form-new-lexique', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    var modal_type = $('#laun-type').val(); //insert/update
+   
+    var def = $('#def').val(); 
+    var mot = $('#mot').val(); 
+    
+    if (modal_type == 'insert') {
+        $.ajax({
+            url: 'module/data/insert_lexique.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                mot: mot,
+                def: def
+            },
+            success: function(data) {
+               if(data['valid'] == true){
+                    $('#modal-laun').modal('hide');
+                    tous_lexique();
+                }
             },
             error: function(e) {
                 eMsg(163);
@@ -261,7 +299,7 @@ $(document).on('submit', '#form-new-laun', function(event) {
 }); //end submit form
 
 //delete laundry
-$('#delLaun').click(function(event) {
+$('#delLexique').click(function(event) {
     /* Act on the event */
     var haveCheck = false;
     $('input[type=checkbox]:checked').each(function(index) {
@@ -269,9 +307,25 @@ $('#delLaun').click(function(event) {
     });
 
     if (haveCheck == false) {
-        alert('Aucun dossier sélectionné.');
+        alert('Aucun mot clé sélectionné.');
     } else {
-        $('#confirm-type').val('delete-laundry');
+        $('#confirm-type').val('delete-lexique');
+        $('#modal-confirm').modal('show');
+
+    }
+});
+
+$('#delVideo').click(function(event) {
+    /* Act on the event */
+    var haveCheck = false;
+    $('input[type=checkbox]:checked').each(function(index) {
+        haveCheck = true;
+    });
+
+    if (haveCheck == false) {
+        alert('Aucune vidéo sélectionnée');
+    } else {
+        $('#confirm-type').val('delete-video');
         $('#modal-confirm').modal('show');
 
     }
@@ -297,12 +351,12 @@ $('#retraitDoc').click(function(event) {
 $('#confirm-yes').click(function(event) {
     /* Act on the event */
     var confirmType = $('#confirm-type').val();
-    if (confirmType == 'delete-laundry') {
+    if (confirmType == 'delete-lexique') {
         //delete laun
         $('input[type=checkbox]:checked').each(function(index) {
             var id = $(this).val();
             $.ajax({
-                url: 'data/delete_laundry.php',
+                url: 'module/data/delete_lexique.php',
                 type: 'post',
                 data: {
                     id: id
@@ -316,13 +370,13 @@ $('#confirm-yes').click(function(event) {
             });
         }); //end check array
         $('#modal-confirm').modal('hide');
-        $('#modal-msg').find('#msg-body').text('Dossier supprimé avec succès !');
+        $('#modal-msg').find('#msg-body').text('Mot-clé supprimé !');
         $('#modal-msg').modal('show');
-    } else if (confirmType == 'claim-laundry') {
+    } else if (confirmType == 'delete-video') {
         $('input[type=checkbox]:checked').each(function(index) {
             var id = $(this).val();
             $.ajax({
-                url: 'data/claim_laundry.php',
+                url: 'module/data/delete_video.php',
                 type: 'post',
                 data: {
                     id: id
@@ -336,7 +390,7 @@ $('#confirm-yes').click(function(event) {
             });
         }); //end check array
         $('#modal-confirm').modal('hide');
-        $('#modal-msg').find('#msg-body').text('Dossier marqué comme signé avec succès !');
+        $('#modal-msg').find('#msg-body').text('Vidéo supprimée avec succès !');
         $('#modal-msg').modal('show');
     } else if (confirmType == "retire-dossier") {
         $('input[type=checkbox]:checked').each(function(index) {
@@ -361,7 +415,7 @@ $('#confirm-yes').click(function(event) {
     } else {
         //sooo fucking sleepy
     }
-    all_laundry();
+    all_videos();
 }); //end if confirm yes is click
 
 //edit laundry basin na sayop
@@ -453,7 +507,7 @@ function loadSale() {
         }
     });
 } //end loadSale
-loadSale();
+//loadSale();
 
 function loadRetire() {
     $.ajax({
@@ -468,7 +522,7 @@ function loadRetire() {
         }
     });
 } //end loadSale
-loadRetire();
+//loadRetire();
 
 $('#print-button').click(function(event) {
     /* Act on the event */

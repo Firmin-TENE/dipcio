@@ -603,16 +603,16 @@
         padding: 0 0 0 .2em
     }
     .rquiz-multichoice ol input:checked+label {
-        background: #f0f4c3;
+        background: #14213d;
         border: 2px solid #999;
         box-shadow: 0 0 5px #bbb inset;
         margin: -1px
     }
     .rquiz-multichoice.rquiz-finished ol label {
-        color: #0a0
+        color: red;
     }
     .rquiz-multichoice.rquiz-finished li[data-x] label {
-        color: #a00
+        color: green;
     }
     .rquiz-multichoice.rquiz-finished ol label:after {
         bottom: -.5em;

@@ -27,14 +27,14 @@
 	
 	class Lexique{
 
-		private $_id_lexique;
-		private $_mot_cle;
-		private $_definition;
+		public $_id_lexique;
+		public $_mot_cle;
+		public $_definition;
 
 		function __construct($id_lexique, $mot_cle, $definition){
-			$this->_id_lexique = utf8_decode($id_lexique);
-			$this->_mot_cle = utf8_decode($mot_cle);
-			$this->_definition = utf8_decode($definition);
+			$this->_id_lexique = $id_lexique;
+			$this->_mot_cle = $mot_cle;
+			$this->_definition = $definition;
 		}
 
 		public function id(){
@@ -299,6 +299,45 @@
 		return $resultats;
 	}
 
+	function resume($id_cours){
+		global $bd;
+
+		$verif = $bd->query('select * from cours where id_cours = '.$id_cours);
+		while ($donnee = $verif->fetch()) {
+			$resultat = $donnee['resume'];
+		}
+		$verif->closeCursor();
+		return $resultat; 
+	}
+
+	function cours(){
+		global $bd;
+		$resultat = [];
+		$verif = $bd->query('select * from cours');
+		$i = 0;
+		while ($donnee = $verif->fetch()) {
+			$resultat[$i] = $donnee;
+			$i++;
+		}
+		$verif->closeCursor();
+		return $resultat; 
+	}
+
+	function localisation(){
+		global $bd;
+		$resultat = [];
+		$verif = $bd->query('select * from statique');
+		$i = 0;
+		while ($donnee = $verif->fetch()) {
+			$resultat[$i] = $donnee;
+			$i++;
+		}
+		$verif->closeCursor();
+		return $resultat; 
+	}
+
+
+
 	function liste_exercices($codeType){
 		global $bd;
 		$resultats = [];
@@ -307,7 +346,7 @@
 
 		while($donnee = $exos->fetch()){
 
-			if($codeType == 1){
+			if($codeType == 1 || $codeType == 5){
 
 				if($donnee['rep'] == 1){
 					$donnee['prop1'] = '!'.$donnee['prop1'];
@@ -339,7 +378,7 @@
 
 	function addExercice($codeCours, $question, $prop1, $prop2, $prop3, $prop4, $rep, $img, $codetype){
 		global $bd;
-		$rep1 = $bd->exec('insert into exercice(codeCours, question, prop1, prop2, prop3, prop4, rep, img, codetype) values ('.$codeCours.',\''.$question.'\',\''.$prop1.'\',\''.$prop2.'\',\''.$prop3.'\',\''.$prop4.'\','.$rep.',\''.$img.'\',\''.$codetype.'\')');
+		$rep1 = $bd->exec("insert into exercice(codeCours, question, prop1, prop2, prop3, prop4, rep, img, codetype) values (".$codeCours.",\"".$question."\",\"".$prop1."\",\"".$prop2."\",\"".$prop3."\",\"".$prop4."\",".$rep.",\"".$img."\",\"".$codetype."\")");
 	}
 
 
@@ -358,7 +397,7 @@
 		}
 
 		#sinon on l'ajoute
-		$rep = $bd->exec('insert into lexique(mot_cle, definition) values(\'' .$mot. '\',\'' .$definition.'\')');
+		$rep = $bd->exec("insert into lexique(mot_cle, definition) values(\"" .$mot. "\",\"" .$definition."\")");
 		
 		#je ferme les curseurs
 		$verif->closeCursor();
@@ -528,6 +567,13 @@
 	function ajouter_video($titre, $path){
 		global $bd;
 		$rep = $bd->exec('insert into videos(titre, path) values(\'' .$titre. '\', \'' .$path. '\')');
+	}
+
+
+	#supprimer des vidéos
+	function supprimer_video($id_video){
+		global $bd;
+		$rep = $bd->exec('delete from videos where id_video = '.$id_video);
 	}
 
 	############################# Fin Module Vidéo ########################################

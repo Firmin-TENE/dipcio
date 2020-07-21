@@ -94,6 +94,16 @@ body{
 	/*background-image: url("../img/background1.jpg");*/
 }
 
+#modules3{
+	padding: 2em; 
+	margin-bottom: 2%;
+	margin-top: 37vh;
+	transform: translateY(-50%);
+	background-image: url("../Images/enseig.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 .sty_score{
 	margin-left: 10px;
 }
@@ -264,7 +274,7 @@ a .card:hover{
 .location_title{
 	font-family: Constantia;
 	/*color: #DD3333; */
-	color: #d50000;
+	color: #fca311;
 	text-decoration: underline; 
 	text-decoration-color: pink;
 }
@@ -316,4 +326,14 @@ a .card:hover{
 	padding-bottom: 2px; 
 	padding-left: 5px; 
 	padding-right: 5px; "
+}
+
+.image-quiz{
+	width: 100px;
+	height: 80px;
+}
+
+.image-puzzle{
+	width: 100px;
+	height: 100px;
 }

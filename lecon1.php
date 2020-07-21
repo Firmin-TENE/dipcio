@@ -1,6 +1,9 @@
 <?php
   session_start();
   include('bd.php');
+
+  $cours_id = $_GET['l'];
+  echo '<script type="text/javascript"> cours_id = '.$cours_id.';</script>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +16,7 @@
     include('meta.php');
   ?>
 
-  <title>Compétences</title>
+  <title>leçon</title>
 
   <!-- Custom fonts for this template-->
  <?php
@@ -47,7 +50,7 @@
 
 
             <!-- contenu du module -->
-            <div class="row" style="margin-bottom: 15px; margin-top: 0.2%; height: 25em;">
+            <div class="row" style="margin-bottom: 15px; height: 25em;">
              
               <div class="col-md-12">
                 
@@ -55,7 +58,7 @@
                   
 
                   <!-- parties de la leçons -->
-                  <div class="col-md-2" style="margin-right: 2%;">
+                  <div class="col-md-2 details-modules" style="margin-right: 2%; ">
                     <?php 
                       include('sequencement.php');
                      ?>
@@ -64,7 +67,7 @@
 
                   <!-- contenus -->
 
-                  <div class="col-md-8 tableau" style="padding: 25px; padding-left: 40px; padding-right: 40px; height: 25em;">
+                  <div class="col-md-8 details-modules tableau" style="padding: 25px; padding-left: 40px; padding-right: 40px; height: 25em;">
 
                     <!-- competences -->
                     <?php include('competences.php'); ?>
@@ -112,7 +115,13 @@
     $(document).ready(function(){
 
       //je defini le titre de la leçon
-      $('#titre').text('UE1: IDENTIFICATION DES PORTS ET DE LEURS ROLES');
+      if(cours_id == 1){
+        $('#titre').text('UE1: IDENTIFICATION DES PORTS ET DE LEURS ROLES');
+      }
+      else{
+        $('#titre').text('UE1: IDENTIFICATION DES COMPOSANTS INTERNES ET DE LEURS ROLES');
+      }
+      
       selectionner_un_bouton(1);
       
       $('#precedent').hide();
@@ -172,6 +181,9 @@
     }
 
     function selectionner_un_bouton(id_bout){
+
+      if (id_bout == 5)
+        goToActivite();
     
       for(var i=1;i<6;i++){
         if(i == id_bout){
@@ -207,6 +219,11 @@
 
     function retour_menu(){
       window.location.href = "http://localhost/dipcio/lecons.php";
+    }
+
+
+    function goToActivite(){
+      window.location.href = "http://localhost/dipcio/exercices.php";
     }
 
   </script>

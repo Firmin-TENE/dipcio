@@ -19,7 +19,7 @@
 				?>
 				<div class="row">
 					<div class="col-md-12">
-						  <p> Question <?= $i+1 ?>:  <?=$questions[$i]->_question?><?=$questions[$i]->_prop1 ?><?=$questions[$i]->_prop2 ?><?=$questions[$i]->_prop3 ?><?= $questions[$i]->_prop4 ?></p>
+						  <p> <?=$questions[$i]->_question?><?=$questions[$i]->_prop1 ?><?=$questions[$i]->_prop2 ?><?=$questions[$i]->_prop3 ?><?= $questions[$i]->_prop4 ?></p>
 					</div>
 				</div>
 

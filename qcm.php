@@ -79,7 +79,7 @@
               <div class="col-md-9" style="padding: 10px; border-color: white; background-color: white;  border: 2px solid #858796; margin-left: 4.2%; height: 24em;">
 
                 <!-- pour une nouvelle partie -->
-                <div class="row d-flex" style="height: 10%; border: 1px solid black; margin-left: 0.1%;">
+                <div class="row d-flex" style="height: 10%;  margin-left: 0.1%;">
                   <button type="button" onclick="NouvellePartie()" id="newPartie" class="btn btn-info" style="height: 80%; font-family: constantia; padding: 0.03rem 0.60rem; font-weight: bold; margin: 2px;">Nouvelle partie</button>
 
                   <button type="button" onclick="Resultats()" hidden class="btn btn-info" style="height: 80%; font-family: constantia; padding: 0.03rem 0.75rem; margin: 2px; font-weight: bold;">Mes derniers résultats </button>
@@ -89,7 +89,7 @@
                 </div>
 
 
-                <div id="questionnaire" class="row" style="height: 80%; border: 1px solid yellow;">
+                <div id="questionnaire" class="row" style="height: 80%; background-color: #14213a; color: white;">
 
 
                   <!-- debut des questions -->
@@ -103,7 +103,7 @@
                       echo "<script type='text/javascript'> codeExercices[".($i-1)."] = ".$questions[$i-1]->_codeExercice." ; reponse[".($i-1)."] = \"".$questions[$i-1]->_rep."\";</script>";
                   ?>
 
-                  <div class="col-md-12 test" id="q<?=$i?>">
+                  <div class="col-md-12 " id="q<?=$i?>">
 
                      <?php  
                       if($i>1) 
@@ -111,26 +111,26 @@
                      ?>
                     
                     <!-- pour le titre de la question -->
-                    <div class="row test" style="height: 23%; padding-right: 20px; padding-top: 2%; padding-left: 10px; font-size:large; font-family: constantia; font-weight: bold; color: black;">
+                    <div class="row " style="height: 23%; padding-right: 20px; padding-top: 2%; padding-left: 10px; font-size:large; font-family: constantia; font-weight: bold; color: white;">
                       <?= $questions[$i-1]->_question ?>
                     </div>
 
                     <!-- pour les propositions -->
-                    <div class="row test" style="height: 75%; margin-top: 3px;">
+                    <div class="row " style="height: 75%; margin-top: 3px;">
 
 
                       <!-- pour les items des propositions -->
-                      <div class="col-md-8 test" style="flex: 0 0 75.66667%; max-width: 75%; margin-top: 3px;">
+                      <div class="col-md-8 " style="flex: 0 0 75.66667%; max-width: 75%; margin-top: 3px;">
                         
                         <div class="row" style="margin-top: 3%;">
                           <!-- porp1 -->
-                          <div class="row test" style="height: 24%; width: 100%; margin-bottom: 0.5%;">
-                            <div class="col-md-10 test" style="margin-left: 5px; padding-left: 3%;">
-                              <button id="bout1" onclick="VerifierReponse(0)" style="height: 90%; width: 100%; font-size: small; padding-bottom: 4px;">
+                          <div class="row " style="height: 24%; width: 100%; margin-bottom: 0.5%;">
+                            <div class="col-md-10 " style="margin-left: 5px; padding-left: 3%;">
+                              <button id="bout1" onclick="VerifierReponse(0)" style="height: 90%; width: 100%; font-size: 102%; padding-bottom: 4px; background-color: white; color: black; font-weight: bold;">
                                 <?= $questions[$i-1]->_prop1 ?>
                               </button>
                             </div>
-                            <div class="col-md-1 test">
+                            <div class="col-md-1 ">
                               <div id="t<?= $i.'1';?>">
                                 <i class="fa fa-check" aria-hidden="true" style="color: green;padding-top: 6px;"></i>
                               </div>
@@ -141,13 +141,13 @@
                           </div>
 
                           <!-- porp2 -->
-                         <div class="row test" style="height: 24%; width: 100%;">
-                            <div class="col-md-10 test" style="margin-left: 5px; padding-left: 3%;">
-                              <button id="bout2" onclick="VerifierReponse(1)" style="height: 90%; width: 100%; font-size: small; padding-bottom: 4px;">
+                         <div class="row " style="height: 24%; width: 100%;">
+                            <div class="col-md-10 " style="margin-left: 5px; padding-left: 3%;">
+                              <button id="bout2" onclick="VerifierReponse(1)" style="height: 90%; width: 100%; font-size: 102%; padding-bottom: 4px; background-color: white; color: black; font-weight: bold;">
                                  <?= $questions[$i-1]->_prop2 ?>
                               </button>
                             </div>
-                            <div class="col-md-1 test">
+                            <div class="col-md-1 ">
                               <div id="t<?= $i.'2';?>">
                                 <i class="fa fa-check" aria-hidden="true" style="color: green;padding-top: 6px;"></i>
                               </div>
@@ -158,13 +158,13 @@
                           </div>
 
                           <!-- porp3 -->
-                          <div class="row test" style="height: 24%; width: 100%;">
-                            <div class="col-md-10 test" style="margin-left: 5px; padding-left: 3%;">
-                              <button id="bout3" onclick="VerifierReponse(2)" style="height: 90%; width: 100%; font-size: small; padding-bottom: 4px;">
+                          <div class="row " style="height: 24%; width: 100%;">
+                            <div class="col-md-10 " style="margin-left: 5px; padding-left: 3%;">
+                              <button id="bout3" onclick="VerifierReponse(2)" style="height: 90%; width: 100%; font-size: 102%; padding-bottom: 4px; background-color: white; color: black; font-weight: bold;">
                                  <?= $questions[$i-1]->_prop3 ?>
                               </button>
                             </div>
-                           <div class="col-md-1 test">
+                           <div class="col-md-1 ">
                               <div id="t<?= $i.'3';?>">
                                 <i class="fa fa-check" aria-hidden="true" style="color: green;padding-top: 6px;"></i>
                               </div>
@@ -175,13 +175,13 @@
                           </div>
 
                           <!-- porp4 -->
-                          <div class="row test" style="height: 24%; width: 100%;">
-                            <div class="col-md-10 test" style="margin-left: 5px; padding-left: 3%;">
-                               <button id="bout4" onclick="VerifierReponse(3)" style="height: 90%; width: 100%; font-size: small; padding-bottom: 4px;">
+                          <div class="row " style="height: 24%; width: 100%;">
+                            <div class="col-md-10 " style="margin-left: 5px; padding-left: 3%;">
+                               <button id="bout4" onclick="VerifierReponse(3)" style="height: 90%; width: 100%; font-size: 102%; padding-bottom: 4px; background-color: white; color: black; font-weight: bold;">
                                   <?= $questions[$i-1]->_prop4 ?>
                                </button>
                             </div>
-                           <div class="col-md-1 test">
+                           <div class="col-md-1 ">
                               <div id="t<?= $i.'4';?>">
                                 <i class="fa fa-check" aria-hidden="true" style="color: green;padding-top: 6px;"></i>
                               </div>
@@ -196,7 +196,7 @@
 
                       <!-- pour l'image -->
 
-                      <div class="col-md-3 test" style="flex: 0 0 25%; max-width: 25%; margin-top: 1%; margin-bottom: 20px; padding-left: 2px; padding-right: 4px;">
+                      <div class="col-md-3 " style="flex: 0 0 25%; max-width: 25%; margin-top: 1%; margin-bottom: 20px; padding-left: 2px; padding-right: 4px;">
 
                         <?php
 
@@ -225,12 +225,12 @@
 
 
 
-                <div id="results" class="row justify-content-center" style="height: 80%; border: 1px solid pink;">
-                  <div class="col-md-6 test" id="q<?=$i?>" style=" margin-top: 6%; color: black; font-size: x-large; font-family: centaur; ">
+                <div id="results" class="row justify-content-center" style="height: 80%; border: 1px solid pink; background-color: #14213d; color: white;">
+                  <div class="col-md-6" id="q<?=$i?>" style=" margin-top: 6%; color: white; font-size: x-large; font-family: centaur; ">
                     <div class="row">Nombre total de questions: <span class="sty_score" id="nbre_t"></span></div>
-                    <div class="row">Réponses correctes: <span class="sty_score" id="bne_rep"></span></div>
-                    <div class="row">Mauvaises réponses: <span class="sty_score" id="ma_rep"></span></div>
-                    <div class="row">Score: <span class="sty_score" id="score_fi"></span></div>
+                    <div class="row">Réponses correctes: <span style="color: red;" class="sty_score" id="bne_rep"></span></div>
+                    <div class="row">Mauvaises réponses: <span style="color: red;" class="sty_score" id="ma_rep"></span></div>
+                    <div class="row">Score: <span style="color: red;" class="sty_score" id="score_fi"></span></div>
                   </div>
 
                 </div>
@@ -330,7 +330,7 @@
 
 
     function retour_menu(){
-      window.location.href = "http://localhost/dipcio/accueil.php";
+      window.location.href = "http://localhost/dipcio/jeux.php";
     }
 
     //fonction pour démarrer une nouvelle partie

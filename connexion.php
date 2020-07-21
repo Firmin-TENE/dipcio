@@ -14,11 +14,12 @@
 <body id="page-top">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+ <div id="wrapper" style="height: 100%; margin: 0px auto; overflow: hidden;">
+
 
     <!-- Content Wrapper -->
-    <div class="row d-flex justify-content-center">
-      <div id="content-wrapper" class="col-md-9 entete"   style="background-color: #343b7c;">
+    <div class="row d-flex justify-content-center" style="height: 100%">
+      <div id="content-wrapper" class="col-md-9 entete" style="height: 92%; overflow: hidden; background-color: #343b7c;">
 
 
         <!-- Debut réel du body -->
@@ -46,7 +47,7 @@
             <!-- Fin L'entête contenant le retour à l'accueil et le titre du module -->
 
             <!-- contenu du module -->
-            <div class="row justify-content-center" style="margin-top: 70px; margin-bottom: 150px;">
+            <div class="row justify-content-center" style="margin-top: 15%; margin-bottom: 150px;">
 
               <div class="col-md-4">
                 <form class="user" method="post" action="authentification.php">
@@ -92,6 +93,7 @@
 
 
       </div>
+      <?php include('footer.php') ?>
     </div>
     <!-- End of Content Wrapper -->
 
@@ -110,7 +112,7 @@
     document.getElementById("options").style.display = "none";
     document.getElementById("btn_connect").style.display = "none";
   </script>
-  <?php include('footer.php') ?>
+  
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

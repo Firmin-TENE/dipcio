@@ -46,6 +46,7 @@
 
             <!-- bloc des modules -->
             <div class="row d-flex justify-content-center">
+              <div class="col-md-1"> </div>
               <div class="col-md-6" id="modules" style="border: 12px solid white; border-radius: 20px;">
 
                 <div class="row">
@@ -65,7 +66,7 @@
 
                   <div class="col-md-4">
 
-                    <a href="#" style="background-color: red;">
+                    <a href="exercices.php" style="background-color: red;">
                     
                       <div class="card">
                         <img class="card-img-top" src="img/exercice1.png" alt="Leçons">
@@ -79,7 +80,7 @@
 
                   <div class="col-md-4">
 
-                    <a href="#" style="background-color: red;">
+                    <a href="jeux.php" style="background-color: red;">
                     
                       <div class="card">
                         <img class="card-img-top" src="img/jeux2.jpg" alt="Leçons">
@@ -110,7 +111,7 @@
 
                   <div class="col-md-4">
 
-                    <a href="#">
+                    <a href="simulation.php">
                     
                       <div class="card">
                         <img class="card-img-top" src="img/simulation2.jpg" alt="Leçons">
@@ -139,6 +140,10 @@
                 </div>
                 <!-- fin de la seconde ligne des modules -->
 
+              </div>
+
+              <div class="col-md-2" id="modules3">
+                
               </div>
             </div>
             <!-- fin du bloc des modules -->
